@@ -9,16 +9,16 @@ This project was developed as a coding exercise to demonstrate automated testing
 
 ## Class Descriptions
 
-### `ConfigManager.java`
+### `ConfigManager`
 This class is located in the `/config` package. It loads configuration properties from `config.properties`, such as `base.url` and other test-specific data.
 
-### `DriverFactory.java`
+### `DriverFactory`
 Located in the `/factory` package, `DriverFactory` is responsible for managing WebDriver instances. It ensures the driver is initiated and properly closed after each test.
 
-### `BasePage.java`
+### `BasePage`
 The `BasePage` class, found in the `/pages` package, serves as the base class for all page objects. It contains common methods used across different pages, like click and getText, with support for wait conditions.
 
-### `GoogleFinancePage.java`
+### `GoogleFinancePage`
 This page class models the Google Finance page and is also located in the `/pages` package. It uses the Page Factory pattern with `@FindBy` annotations to locate and interact with UI elements, including stock symbols, prices, and descriptions.
 
 - `getExpectedStockSymbols()` - Returns the expected stock symbols.
@@ -26,10 +26,10 @@ This page class models the Google Finance page and is also located in the `/page
 - `getNegativeStockSymbolsWithPrices()` - Gets stock symbols with negative values and their respective prices.
 - `getPositiveStockSymbolsWithPrices()` - Gets stock symbols with positive values and their respective prices.
 
-### `ReportManager.java`
+### `ReportManager`
 In the `/utils` package, this class generates HTML test reports using ExtentReports, providing insights into test execution status.
 
-### `GoogleFinanceTest.java`
+### `GoogleFinanceTest`
 The test class located in `/com/finfare/tests` contains automated tests for verifying stock symbols and their values on the Google Finance page. The tests include assertions to compare actual data retrieved from the UI with expected collections.
 
 ## GitHub Actions Workflows
