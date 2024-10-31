@@ -1,0 +1,20 @@
+name: Nightly Tests
+
+on:
+  schedule:
+    - cron: "0 2 * * *"  # Runs every day at 2 AM
+
+jobs:
+  nightly-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 22
+        uses: actions/setup-java@v1
+        with:
+          java-version: 22
+
+      - name: Run all tests
+        run: mvn clean test
